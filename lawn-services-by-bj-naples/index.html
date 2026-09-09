@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lawn Care in Naples, FL | Lawn Services by BJ LLC</title>
+<meta name="description" content="Lawn Services by BJ LLC provides residential mowing, edging, trimming, and yard cleanup in Naples, FL. Rated 5.0 stars across 25 Google reviews — call or text for a free quote." />
+<link rel="canonical" href="https://falconwebstudio.com/websites/lawn-services-by-bj-naples/" />
+<meta name="robots" content="index,follow" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Lawn Care in Naples, FL | Lawn Services by BJ LLC" />
+<meta property="og:description" content="Residential mowing, edging, trimming, and yard cleanup in Naples, FL. Rated 5.0 stars across 25 Google reviews. Call or text for a free quote." />
+<meta property="og:url" content="https://falconwebstudio.com/websites/lawn-services-by-bj-naples/" />
+<meta property="og:image" content="https://falconwebstudio.com/websites/lawn-services-by-bj-naples/assets/hero-front-lawn-naples.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="960" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://falconwebstudio.com/websites/lawn-services-by-bj-naples/assets/hero-front-lawn-naples.jpg" />
+<meta name="theme-color" content="#FBF7F0" />
+
+<!-- Favicon: cream grass-blade mark on rust -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B5532A'/%3E%3Cg fill='none' stroke='%23FBF7F0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 25c0-8 1-13 3-16'/%3E%3Cpath d='M16 25c0-10 1-15 3-18'/%3E%3Cpath d='M21 25c0-7 1-11 2.5-14'/%3E%3C/g%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- LocalBusiness JSON-LD — HomeAndConstructionBusiness (schema.org has no more-specific lawn-care
+     type). No aggregateRating/review markup (Google forbids self-serving review markup) and no
+     openingHoursSpecification (Places' "Open 24 hours" every day is a placeholder on a lawn crew,
+     suppressed per the 24h-placeholder guard — see BRIEF.md). -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Lawn Services by BJ LLC",
+  "url": "https://falconwebstudio.com/websites/lawn-services-by-bj-naples/",
+  "image": "https://falconwebstudio.com/websites/lawn-services-by-bj-naples/assets/hero-front-lawn-naples.jpg",
+  "telephone": "+12394508307",
+  "email": "lawnservicesbybj@aol.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "9582 Winterview Dr",
+    "addressLocality": "Naples",
+    "addressRegion": "FL",
+    "postalCode": "34109",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.263032,
+    "longitude": -81.7642132
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Naples, FL" }
+  ]
+}
+</script>
+
+<style>
+:root{
+  /* spacing */
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2rem; --s5:3rem; --s6:4rem; --s7:6rem; --s8:8rem;
+  --section-y:clamp(3.5rem,8vw,7.5rem);
+  --hero-y:clamp(4rem,10vw,9rem);
+  --container:75rem;
+  --measure:65ch;
+  /* type */
+  --h1:clamp(2.1rem,4.6vw,3.4rem);
+  --h2:clamp(1.6rem,3vw,2.2rem);
+  --h3:1.375rem;
+  --body:1.0625rem;
+  --small:.875rem;
+  --lh-body:1.6;
+  --lh-head:1.1;
+  /* color — warm-trust, single-accent variant (rust only — this market's already-burned skin used
+     a forest-green/gold/terracotta trio; this build deliberately stays cream/charcoal/rust so the
+     first screen reads unmistakably different, see BRIEF.md "Skin decision") */
+  --cream:#FBF7F0;
+  --cream-2:#F4EBDD;
+  --ink:#23201B;
+  --ink-2:#5c5348;
+  --ink-3:#6d6559;
+  --line:#e6dcc9;
+  --rust:#B5532A;
+  --rust-d:#8f4020;
+  --card:#ffffff;
+  /* radius */
+  --r-s:8px; --r-m:16px; --r-l:28px; --r-pill:999px;
+  /* shadow */
+  --sh-1:0 1px 2px rgba(35,32,27,.06);
+  --sh-2:0 3px 8px rgba(35,32,27,.08),0 1px 2px rgba(35,32,27,.06);
+  --sh-3:0 10px 24px rgba(35,32,27,.12),0 2px 6px rgba(35,32,27,.06);
+  --sh-warm:0 18px 40px rgba(181,83,42,.18);
+  --t:200ms cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:var(--body);line-height:var(--lh-body);color:var(--ink);background:var(--cream);overflow-x:clip}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:var(--lh-head);margin:0 0 var(--s3);color:var(--ink);font-weight:600}
+h1{font-size:var(--h1);font-weight:600;letter-spacing:-.01em}
+h2{font-size:var(--h2)}
+h3{font-size:var(--h3)}
+p{margin:0 0 var(--s3);max-width:var(--measure);color:var(--ink-2)}
+a{color:inherit}
+img{display:block;max-width:100%}
+button{font:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--s4)}
+@media (max-width:640px){.container{padding:0 var(--s3)}}
+.icn{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+section{scroll-margin-top:84px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---- nav ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:var(--s3)}
+.wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--ink);min-width:0}
+.wordmark .mark{width:34px;height:34px;border-radius:10px;background:var(--rust);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.wordmark .mark svg{width:18px;height:18px;stroke:var(--cream);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.wordmark small{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.navlinks{display:flex;gap:var(--s5);list-style:none;margin:0;padding:0}
+.navlinks a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink-2);padding:.4rem 0;border-bottom:2px solid transparent;transition:color var(--t),border-color var(--t)}
+.navlinks a:hover,.navlinks a.active{color:var(--rust);border-color:var(--rust)}
+.nav-cta{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;text-decoration:none;border-radius:var(--r-pill);padding:.85rem 1.5rem;border:1px solid transparent;transition:transform var(--t),box-shadow var(--t),background var(--t);cursor:pointer;font-size:.98rem;white-space:nowrap}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{background:var(--rust);color:var(--cream);box-shadow:var(--sh-warm)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 44px rgba(181,83,42,.24)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--rust);color:var(--rust)}
+.btn-onink{background:var(--cream);color:var(--ink)}
+.btn-onink:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.btn-ghost-onink{background:transparent;color:var(--cream);border-color:rgba(251,247,240,.4)}
+.btn-ghost-onink:hover{border-color:var(--cream)}
+.btn-sm{padding:.6rem 1.1rem;font-size:.88rem}
+.hamburger{display:none;background:none;border:none;padding:.4rem;cursor:pointer;flex-shrink:0}
+.hamburger svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+/* Off-canvas drawer: the sliding panel is wrapped in a mask that is ALWAYS exactly viewport-sized
+   (inset:0, overflow:hidden) so it never contributes to document.documentElement.scrollWidth even
+   while the panel itself sits off-canvas via a plain `right` offset. */
+.drawer-mask{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:60}
+.drawer-mask.open{pointer-events:auto}
+.drawer{position:absolute;top:0;right:-100%;bottom:0;width:100%;background:var(--cream);display:flex;flex-direction:column;padding:var(--s4);transition:right var(--t)}
+.drawer-mask.open .drawer{right:0}
+.drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--s5)}
+.drawer-close{background:none;border:none;padding:.4rem}
+.drawer-close svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+.drawer nav{display:flex;flex-direction:column;gap:var(--s4)}
+.drawer nav a{font-family:'Fraunces',serif;font-size:1.6rem;text-decoration:none;color:var(--ink);font-weight:600}
+.drawer .drawer-cta{margin-top:auto;display:flex;flex-direction:column;gap:var(--s2)}
+@media (max-width:900px){
+  .navlinks,.nav-cta .btn-ghost{display:none}
+  .hamburger{display:block}
+}
+/* Long wordmark ("Lawn Services by BJ") vs. the always-visible header call button was measured
+   wrapping to 3 lines at 375/320 and breaking the fixed-height topbar (text spilling above/below
+   the bar). Fix: collapse the header call button to icon-only + shrink/decaption the wordmark once
+   the row can no longer fit both comfortably. */
+@media (max-width:460px){
+  .topbar-inner{height:auto;min-height:64px;padding:.6rem 0}
+  .wordmark{font-size:.98rem}
+  .wordmark small{display:none}
+  .nav-cta{gap:.4rem}
+  .nav-cta .btn-primary.btn-sm{padding:.65rem;border-radius:50%}
+  .nav-cta .btn-primary.btn-sm .btn-label{display:none}
+}
+
+/* ---- hero ---- */
+.hero{padding:var(--hero-y) 0 var(--s7)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:var(--s6);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:var(--s7)}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--rust-d);margin-bottom:var(--s3)}
+.eyebrow .rule{width:28px;height:2px;background:var(--rust);display:inline-block}
+.hero p.lead{font-size:1.15rem;color:var(--ink-2);max-width:44ch}
+.rating-badge{display:inline-flex;align-items:center;gap:.6rem;background:var(--card);border:1px solid var(--line);border-radius:var(--r-pill);padding:.55rem 1.1rem;box-shadow:var(--sh-1);font-weight:700;margin:var(--s3) 0 var(--s4)}
+.stars{display:flex;gap:2px;color:var(--rust)}
+.stars svg{width:15px;height:15px;fill:currentColor;stroke:none}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.hero-photo-wrap{position:relative}
+.hero-photo{border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-3);aspect-ratio:4/3;background:var(--cream-2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-tag{position:absolute;left:-1rem;bottom:1.5rem;background:var(--card);border-radius:var(--r-m);box-shadow:var(--sh-3);padding:.9rem 1.2rem;display:flex;align-items:center;gap:.7rem;max-width:16rem}
+@media (max-width:520px){.hero-tag{left:.5rem;right:.5rem;max-width:none}}
+.hero-tag .icn-wrap{width:38px;height:38px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-tag .icn-wrap svg{stroke:var(--cream)}
+.hero-tag strong{display:block;font-size:.92rem;line-height:1.3}
+.hero-tag span{font-size:.78rem;color:var(--ink-3)}
+
+/* ---- why us ---- */
+.why{background:var(--cream-2);padding:var(--section-y) 0}
+.why-head{max-width:42rem;margin-bottom:var(--s6)}
+.why-grid{display:grid;grid-template-columns:1fr;gap:var(--s5)}
+@media (min-width:720px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+.why-item{display:flex;flex-direction:column;gap:var(--s2)}
+.why-item .ic{width:52px;height:52px;border-radius:14px;background:var(--rust);display:flex;align-items:center;justify-content:center}
+.why-item .ic svg{stroke:var(--cream);width:24px;height:24px}
+.why-item h3{margin-bottom:.25rem}
+.why-item p{margin:0;font-size:.98rem}
+
+/* ---- services ---- */
+.services{padding:var(--section-y) 0}
+.section-head{max-width:42rem;margin-bottom:var(--s6)}
+.services-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+@media (min-width:640px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.services-grid{grid-template-columns:repeat(3,1fr)}}
+.svc-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-m);padding:var(--s4);transition:transform var(--t),box-shadow var(--t)}
+.svc-card:hover{transform:translateY(-3px);box-shadow:var(--sh-2)}
+.svc-card .ic{width:42px;height:42px;border-radius:12px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;margin-bottom:var(--s3)}
+.svc-card .ic svg{stroke:var(--rust-d)}
+.svc-card h3{font-size:1.08rem;margin-bottom:.35rem}
+.svc-card p{font-size:.92rem;margin:0}
+
+/* ---- trust band (stat-band allowlist: rating + review_count only) ---- */
+.trust{background:var(--ink);color:var(--cream);padding:var(--s6) 0}
+.trust-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--s5);text-align:center}
+.trust-num{font-family:'Fraunces',serif;font-size:3rem;font-weight:700;line-height:1;color:var(--cream)}
+.trust-stars{justify-content:center;color:var(--cream)}
+.trust-meta{font-size:.95rem;color:rgba(251,247,240,.72);margin-top:.2rem}
+.trust-divider{width:1px;height:48px;background:rgba(251,247,240,.2)}
+@media (max-width:640px){.trust-divider{display:none}}
+.trust-line{font-family:'Fraunces',serif;font-size:1.3rem;max-width:26ch;color:var(--cream);margin:0}
+
+/* ---- hours/map ---- */
+.hours-map{background:var(--cream-2);padding:var(--section-y) 0}
+.hm-grid{display:grid;grid-template-columns:1fr;gap:var(--s5)}
+@media (min-width:860px){.hm-grid{grid-template-columns:1fr 1.2fr}}
+.hm-card{background:var(--card);border-radius:var(--r-l);padding:var(--s5);box-shadow:var(--sh-2)}
+.addr-line{display:flex;gap:.7rem;align-items:flex-start;margin-top:var(--s4)}
+.addr-line:first-of-type{margin-top:var(--s3)}
+a[href^="mailto:"]{overflow-wrap:anywhere;word-break:break-word}
+.addr-line .icn{stroke:var(--rust);margin-top:.15rem}
+.map-embed{border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-2);border:none;width:100%;height:100%;min-height:340px;filter:sepia(.18) saturate(.85) hue-rotate(-6deg) contrast(.97);background:var(--cream-2)}
+.hero-grid>*,.why-grid>*,.services-grid>*,.hm-grid>*,.foot-grid>*{min-width:0}
+
+/* ---- final cta ---- */
+.final-cta{background:var(--rust);color:var(--cream);padding:var(--s7) 0;text-align:center}
+.final-cta h2{color:var(--cream)}
+.final-cta p{color:rgba(251,247,240,.88);max-width:38ch;margin-left:auto;margin-right:auto}
+.final-cta .hero-ctas{justify-content:center}
+
+/* ---- footer ---- */
+footer{background:var(--ink);color:var(--cream-2);padding:var(--s6) 0 var(--s4)}
+.foot-grid{display:grid;grid-template-columns:1fr;gap:var(--s5);padding-bottom:var(--s5);border-bottom:1px solid rgba(251,247,240,.14)}
+@media (min-width:720px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+footer .wordmark{color:var(--cream)}
+footer .wordmark small{color:rgba(251,247,240,.55)}
+footer a{text-decoration:none;color:rgba(251,247,240,.85)}
+footer h4{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem;color:rgba(251,247,240,.55);margin-bottom:var(--s2)}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem;font-size:.92rem}
+.foot-bottom{padding-top:var(--s4);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);font-size:.85rem;color:rgba(251,247,240,.55)}
+
+/* sticky mobile call bar */
+.sticky-call{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--rust);display:none;padding:.7rem var(--s3);box-shadow:0 -6px 18px rgba(0,0,0,.18)}
+.sticky-call-inner{display:flex;gap:.6rem}
+.sticky-call .btn{flex:1;justify-content:center}
+@media (max-width:640px){.sticky-call{display:block}body{padding-bottom:74px}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main" style="position:absolute;left:-999px;top:0;background:#fff;padding:.5rem 1rem;z-index:100">Skip to content</a>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a href="#top" class="wordmark">
+      <span class="mark"><svg viewBox="0 0 24 24"><path d="M7 20c0-6 1-10 3-13"/><path d="M12 20c0-8 1-12 3-15"/><path d="M17 20c0-5.5 1-9 2.5-11.5"/></svg></span>
+      <span>Lawn Services by BJ<small>Naples, FL</small></span>
+    </a>
+    <nav>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost btn-sm" href="sms:+12394508307"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
+      <a class="btn btn-primary btn-sm" href="tel:+12394508307" aria-label="Call (239) 450-8307"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="btn-label">(239) 450-8307</span></a>
+      <button class="hamburger" id="menuOpen" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer-mask" id="drawerMask">
+<div class="drawer" id="drawer">
+  <div class="drawer-top">
+    <a href="#top" class="wordmark"><span class="mark"><svg viewBox="0 0 24 24"><path d="M7 20c0-6 1-10 3-13"/><path d="M12 20c0-8 1-12 3-15"/><path d="M17 20c0-5.5 1-9 2.5-11.5"/></svg></span>Lawn Services by BJ</a>
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <nav>
+    <a href="#why">Why Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="drawer-cta">
+    <a class="btn btn-primary" href="tel:+12394508307"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (239) 450-8307</a>
+    <a class="btn btn-ghost" href="sms:+12394508307"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text Us</a>
+  </div>
+</div>
+</div>
+
+<main id="main">
+
+<div id="top"></div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><span class="rule"></span>Naples, FL</span>
+      <h1>Lawn Care in Naples That Actually Gets Handled</h1>
+      <p class="lead">Mowing, edging, trimming, and cleanup for Naples yards — call or text and we'll get you a free quote and a spot on the schedule.</p>
+      <div class="rating-badge">
+        <span class="stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </span>
+        <span>5.0 · 25 reviews on Google</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:+12394508307"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (239) 450-8307</a>
+        <a class="btn btn-ghost" href="sms:+12394508307"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text Us</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">
+        <img src="assets/hero-front-lawn-naples.jpg" width="1280" height="960" alt="Freshly mowed and striped front lawn with a mulched palm-tree bed, serviced by Lawn Services by BJ LLC in Naples, FL" fetchpriority="high" loading="eager" />
+      </div>
+      <div class="hero-tag">
+        <span class="icn-wrap"><svg class="icn" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><strong>Recent lawn service</strong><span>Naples, FL — from our own Google photos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-head">
+      <span class="eyebrow"><span class="rule"></span>Why Naples Calls Us</span>
+      <h2>Straightforward lawn care, right here in Naples</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24" style="stroke:#FBF7F0"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Call or text, reach us directly</h3>
+        <p>(239) 450-8307 goes straight to us — call or text for a real answer about scheduling and a free quote.</p>
+      </div>
+      <div class="why-item">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24" style="stroke:#FBF7F0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Based in Naples, for Naples homes</h3>
+        <p>Residential lawn care service based in Naples, FL 34109 — a local address and a local (239) number, for homeowners here in town.</p>
+      </div>
+      <div class="why-item">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24" style="stroke:#FBF7F0"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg></span>
+        <h3>Rated 5.0 on Google</h3>
+        <p>5.0 across 25 Google reviews — the yard work speaks for itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="rule"></span>Services</span>
+      <h2>What we do</h2>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M4 18c0-4 3.6-7 8-7s8 3 8 7"/><path d="M8 11V6"/><path d="M12 11V4"/><path d="M16 11V7"/></svg></span>
+        <h3>Mowing &amp; Edging</h3>
+        <p>Regular mowing with clean, sharp edging along beds, walks, and drives.</p>
+      </div>
+      <div class="svc-card">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8.5 19 19M19 5 8.5 15.5"/></svg></span>
+        <h3>Trimming &amp; Bed Detail</h3>
+        <p>Shrub and bed-line trimming so the edges hold their shape between visits.</p>
+      </div>
+      <div class="svc-card">
+        <span class="ic"><svg class="icn" viewBox="0 0 24 24"><path d="M3 6h18M3 12h12M3 18h6"/></svg></span>
+        <h3>Yard Cleanup &amp; Debris Removal</h3>
+        <p>Clippings, leaves, and yard debris cleared so the property looks finished, not just cut.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div>
+        <div class="trust-num">5.0</div>
+        <span class="stars trust-stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+        </span>
+        <div class="trust-meta">25 reviews on Google</div>
+      </div>
+      <div class="trust-divider"></div>
+      <p class="trust-line">Trusted by homeowners across Naples, FL.</p>
+    </div>
+  </div>
+</section>
+
+<section class="hours-map" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="rule"></span>Contact</span>
+      <h2>Reach us, or find us</h2>
+    </div>
+    <div class="hm-grid">
+      <div class="hm-card">
+        <h3>Get in touch</h3>
+        <div class="addr-line">
+          <svg class="icn" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div>Call for hours — <a href="tel:+12394508307">(239) 450-8307</a></div>
+        </div>
+        <div class="addr-line">
+          <svg class="icn" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div><strong>(239) 450-8307</strong><br /><a href="tel:+12394508307">Call</a> &nbsp;·&nbsp; <a href="sms:+12394508307">Text</a></div>
+        </div>
+        <div class="addr-line">
+          <svg class="icn" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6 12 13 2 6"/></svg>
+          <div><a href="mailto:lawnservicesbybj@aol.com">lawnservicesbybj@aol.com</a></div>
+        </div>
+        <div class="addr-line">
+          <svg class="icn" viewBox="0 0 24 24"><path d="M12 21c4.97-4.97 8-8.5 8-12a8 8 0 1 0-16 0c0 3.5 3.03 7.03 8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div>9582 Winterview Dr<br />Naples, FL 34109<br /><a href="https://www.google.com/maps/place/?q=place_id:ChIJx08IEdId24gRIjlGdUFafmI" target="_blank" rel="noopener">Get directions</a></div>
+        </div>
+      </div>
+      <iframe class="map-embed" title="Lawn Services by BJ LLC location map" src="https://www.openstreetmap.org/export/embed.html?bbox=-81.7702132%2C26.257032%2C-81.7582132%2C26.269032&layer=mapnik&marker=26.263032%2C-81.7642132" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready for a Better-Looking Lawn?</h2>
+    <p>Mowing, edging, trimming, or a full cleanup — call or text and we'll get you scheduled.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-onink" href="tel:+12394508307"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (239) 450-8307</a>
+      <a class="btn btn-ghost-onink" href="sms:+12394508307"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text Us</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="wordmark"><span class="mark"><svg viewBox="0 0 24 24"><path d="M7 20c0-6 1-10 3-13"/><path d="M12 20c0-8 1-12 3-15"/><path d="M17 20c0-5.5 1-9 2.5-11.5"/></svg></span><span>Lawn Services by BJ<small>Naples, FL</small></span></a>
+        <p style="margin-top:var(--s3);font-size:.92rem;max-width:32ch;color:rgba(251,247,240,.72)">Mowing, edging, trimming, and cleanup for Naples, FL lawns. Thanks for looking after your yard with us.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+12394508307">(239) 450-8307</a></li>
+          <li><a href="mailto:lawnservicesbybj@aol.com">lawnservicesbybj@aol.com</a></li>
+          <li>9582 Winterview Dr, Naples, FL 34109</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <ul>
+          <li>Naples, FL</li>
+          <li>Call for hours</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Lawn Services by BJ LLC, Naples FL</span>
+      <span>Serving Naples, FL</span>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-call">
+  <div class="container sticky-call-inner">
+    <a class="btn btn-onink" href="tel:+12394508307"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    <a class="btn btn-ghost-onink" href="sms:+12394508307" style="background:rgba(35,32,27,.18);border-color:rgba(251,247,240,.55)"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var menuOpen = document.getElementById('menuOpen');
+  var drawerMask = document.getElementById('drawerMask');
+  var drawer = document.getElementById('drawer');
+  var drawerClose = document.getElementById('drawerClose');
+  if(menuOpen){menuOpen.addEventListener('click',function(){drawerMask.classList.add('open');});}
+  if(drawerClose){drawerClose.addEventListener('click',function(){drawerMask.classList.remove('open');});}
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){drawerMask.classList.remove('open');});});
+
+  // scrollspy
+  var links = document.querySelectorAll('.navlinks a');
+  var sections = ['services','why','contact'].map(function(id){return document.getElementById(id);});
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(l){l.classList.remove('active');});
+          var match = document.querySelector('.navlinks a[href="#'+entry.target.id+'"]');
+          if(match) match.classList.add('active');
+        }
+      });
+    },{rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(function(s){ if(s) obs.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
