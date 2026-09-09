@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://falconwebstudio.com/websites/foringer-property-maintenance-erie/sitemap.xml
