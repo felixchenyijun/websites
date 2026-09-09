@@ -99,53 +99,67 @@ p{margin:0}
     content:"R.";font-family:var(--display);font-size:21px;letter-spacing:.04em;
     color:var(--ink);
   }
-  .nav{gap:16px}
-  .nav a{font-size:11px;letter-spacing:.13em}
+  .nav{gap:14px}
+  .nav a{font-size:11px;letter-spacing:.12em}
+}
+/* the fourth nav label (ADD-ONS) costs ~58px; measured at 320px the row still clears the
+   viewport with the Instagram icon intact, but only once the tracking comes in a little */
+@media (max-width:374px){
+  .nav{gap:12px}
+  .nav a{font-size:10.5px;letter-spacing:.08em}
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;background:#2b2724}
-.hero img{
-  width:100%;height:min(84svh,880px);object-fit:cover;object-position:center 55%;
+/* The top frame is a 2:3 studio portrait on a white seamless. A full-bleed cover crop
+   would trim it to a letterbox band across the sitter's chest and put a dark veil over
+   the backdrop, so the hero is an editorial split instead: the portrait is shown WHOLE
+   (object-fit:contain, so the face is never cropped at any breakpoint) beside the
+   wordmark on the paper ground. No veil, no reversed-out type, nothing to overlap. */
+.hero{position:relative;border-bottom:1px solid var(--rule)}
+.hero-in{
+  display:grid;align-items:center;
+  gap:clamp(26px,4.6vw,44px);
+  padding-block:clamp(28px,4.6vw,52px) clamp(52px,6.4vw,78px);
 }
-@supports not (height:1svh){.hero img{height:min(84vh,880px)}}
-@media (max-width:700px){
-  .hero img{height:min(76svh,700px);object-position:center 48%}
-  @supports not (height:1svh){.hero img{height:min(76vh,700px)}}
+@media (min-width:900px){
+  .hero-in{
+    grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
+    gap:clamp(44px,5.4vw,88px);
+    min-height:min(84svh,880px);
+  }
+  @supports not (height:1svh){.hero-in{min-height:min(84vh,880px)}}
 }
-.hero-veil{
-  position:absolute;inset:auto 0 0 0;height:70%;pointer-events:none;
-  /* this hero is a bright, high-key frame (white dress, sunlit grass) — the veil has to
-     carry more weight than a dark image would need for the lock-up to stay legible */
-  background:linear-gradient(to top,rgba(24,20,16,.84) 0%,rgba(24,20,16,.7) 26%,rgba(24,20,16,.42) 56%,rgba(24,20,16,0) 100%);
+.hero-fig{margin:0}
+.hero-fig img{
+  width:100%;height:auto;border-radius:2px;
+  max-height:min(74svh,780px);object-fit:contain;object-position:center;
 }
-.hero-lock{
-  position:absolute;left:0;right:0;bottom:clamp(74px,8vw,112px);
-  color:var(--white);
+@supports not (height:1svh){.hero-fig img{max-height:min(74vh,780px)}}
+/* stacked: let the portrait run its natural 2:3 rather than capping it against a
+   viewport height that the type column is also competing for — but hold it to a
+   sane column so a 2:3 frame doesn't become 1150px tall on a tablet */
+@media (max-width:899px){
+  .hero-fig img{max-height:none}
+  .hero-fig{max-width:min(100%,540px);margin-inline:auto}
 }
-.hero-lock h1{
-  font-size:clamp(38px,7.4vw,80px);font-weight:300;letter-spacing:.02em;
-  /* the wordmark lands on the bride's white dress at some viewport sizes — a tight
-     shadow plus a wide bloom keeps the serif readable without looking like a drop shadow */
-  text-shadow:0 1px 4px rgba(20,16,12,.5),0 2px 30px rgba(20,16,12,.5);
-}
+.hero-type h1{font-size:clamp(38px,6.6vw,78px);font-weight:300;letter-spacing:.02em}
 .hero-line{
-  margin-top:14px;font-size:clamp(11px,1.5vw,13.5px);
-  letter-spacing:.24em;text-transform:uppercase;color:rgba(251,249,245,.94);
-  text-shadow:0 1px 3px rgba(20,16,12,.55),0 1px 18px rgba(20,16,12,.4);
+  margin-top:clamp(14px,2vw,20px);font-size:clamp(11px,1.5vw,13.5px);
+  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
 }
 .scroll-cue{
-  position:absolute;bottom:clamp(20px,2.6vw,30px);left:50%;transform:translateX(-50%);
+  position:absolute;bottom:clamp(18px,2.4vw,28px);left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:7px;pointer-events:none;
 }
 .scroll-cue span{
   display:block;width:1px;height:clamp(22px,4vw,38px);
-  background:linear-gradient(to bottom,rgba(251,249,245,0),rgba(251,249,245,.75));
+  background:linear-gradient(to bottom,rgba(111,103,92,0),rgba(111,103,92,.62));
 }
-.scroll-cue .i{color:rgba(251,249,245,.8);animation:nudge 2.6s ease-in-out infinite}
+.scroll-cue .i{color:var(--muted);animation:nudge 2.6s ease-in-out infinite}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 @media (prefers-reduced-motion:reduce){.scroll-cue .i{animation:none}}
-@media (max-width:540px){.scroll-cue{display:none}}
+/* the cue only means anything when the whole hero is one screen */
+@media (max-width:899px){.scroll-cue{display:none}}
 
 /* ---------- intro ---------- */
 .intro{padding-block:var(--section)}
@@ -182,6 +196,55 @@ p{margin:0}
 .tile img{width:100%;height:auto;transition:transform .7s cubic-bezier(.2,.7,.3,1),opacity .4s}
 .tile:hover img,.tile:focus-visible img{transform:scale(1.028);opacity:.94}
 .tile:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* ---------- add-ons ---------- */
+.addons{padding-bottom:var(--section)}
+.addon{display:grid;gap:clamp(24px,4vw,40px);align-items:center}
+@media (min-width:860px){
+  .addon{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(38px,4.8vw,68px)}
+  /* alternate which side the media sits on so the two blocks don't read as a list */
+  .addon-flip .addon-media{order:2}
+}
+.addon + .addon{margin-top:clamp(54px,7.4vw,96px)}
+.addon-media{min-width:0}
+.addon h3{
+  font-family:var(--display);font-weight:300;line-height:1.2;
+  font-size:clamp(25px,3.1vw,36px);letter-spacing:.01em;
+}
+.price{
+  display:inline-block;margin-left:14px;vertical-align:.22em;
+  font-family:var(--sans);font-size:11.5px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--brass);
+  white-space:nowrap;
+}
+/* wrapped onto its own line the 14px inline offset reads as a stray indent — drop to a
+   proper second line instead */
+@media (max-width:560px){
+  .price{display:block;margin:9px 0 0;vertical-align:baseline}
+}
+.addon-body{margin-top:clamp(18px,2.6vw,24px);color:var(--ink-soft);max-width:54ch}
+.addon-body p + p{margin-top:1.05em}
+.addon figure{margin:0}
+.addon figcaption{
+  margin-top:13px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);line-height:1.7;
+}
+.reel video{
+  width:100%;height:auto;display:block;aspect-ratio:16/9;
+  background:var(--ink);border-radius:2px;
+}
+/* three mini prints, fanned. Photographs are hers, pulled from the portfolio above —
+   the frames are CSS, so nothing here is a stock mock-up */
+.keepsakes img{
+  width:100%;height:auto;display:block;aspect-ratio:1;object-fit:cover;
+  border-radius:2px;
+}
+.addons-note{
+  margin-top:clamp(44px,6vw,72px);padding-top:clamp(22px,3vw,30px);
+  border-top:1px solid var(--rule);color:var(--ink-soft);
+}
+.addons-note a{color:var(--ink);border-bottom:1px solid var(--rule);text-decoration:none;transition:border-color .2s}
+.addons-note a:hover,.addons-note a:focus-visible{border-bottom-color:var(--brass)}
 
 /* ---------- meet the photographer ---------- */
 .meet{padding-bottom:var(--section)}
@@ -319,6 +382,7 @@ body.lb-open{overflow:hidden}
     <a class="mark" href="#top">Rendon Photography</a>
     <nav class="nav" aria-label="Primary">
       <a href="#work">Work</a>
+      <a href="#addons">Add-ons</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a class="nav-ig" href="https://www.instagram.com/rendonphotograpghy" target="_blank" rel="noopener" aria-label="Instagram">
@@ -336,12 +400,14 @@ body.lb-open{overflow:hidden}
 <main id="top">
 
   <section class="hero" aria-label="Introduction">
-    <img src="assets/hero-couple-field-sunset.jpg" width="2000" height="1336"
-         fetchpriority="high" decoding="async"
-         alt="A couple resting together in tall summer grass beside a wooden fence line at sunset, photographed by Rendon Photography near Newberry, South Carolina">
-    <div class="hero-veil"></div>
-    <div class="hero-lock">
-      <div class="wrap">
+    <div class="wrap hero-in">
+      <figure class="hero-fig">
+        <img src="assets/hero-studio-portrait-cream-chair.jpg" width="1368" height="2048"
+             fetchpriority="high" decoding="async"
+             alt="Studio portrait of a woman in a black top and trousers seated on a cream chair against a soft white backdrop, photographed by Rendon Photography">
+      </figure>
+      <div class="hero-type">
+        <div class="rule"></div>
         <h1>Rendon Photography</h1>
         <p class="hero-line">Photography in Newberry, South Carolina</p>
       </div>
@@ -404,14 +470,19 @@ body.lb-open{overflow:hidden}
              alt="Two small children wading through tall sunlit grass at golden hour during a family session">
       </button>
 
+      <button class="tile" type="button" data-cap="Wedding day">
+        <img src="assets/g25.jpg" width="1368" height="2048" loading="lazy" decoding="async"
+             alt="Bride in a lace off-the-shoulder gown and veil walking hand in hand with her groom along a garden path under caf&eacute; string lights">
+      </button>
+
       <button class="tile" type="button" data-cap="Engagement session">
         <img src="assets/g18.jpg" width="1136" height="1700" loading="lazy" decoding="async"
              alt="Couple standing forehead to forehead in a shaft of sunlight against an old brick storefront wall">
       </button>
 
-      <button class="tile" type="button" data-cap="Newborn">
-        <img src="assets/g09.jpg" width="1136" height="1700" loading="lazy" decoding="async"
-             alt="Black and white photograph of a father kissing his newborn's hand, the baby's name embroidered on her hat">
+      <button class="tile" type="button" data-cap="First birthday &middot; studio">
+        <img src="assets/g21.jpg" width="1491" height="1080" loading="lazy" decoding="async"
+             alt="First birthday studio session: a baby in Mickey Mouse ears and red bloomers lettered ONE, sitting with a plush Mickey beneath a Happy Birthday banner and balloons">
       </button>
 
       <button class="tile" type="button" data-cap="Birthday &middot; studio">
@@ -424,6 +495,11 @@ body.lb-open{overflow:hidden}
              alt="Bride and groom walking hand in hand through a tunnel of raised arms and bouquets held up by their wedding party">
       </button>
 
+      <button class="tile" type="button" data-cap="Portrait session">
+        <img src="assets/g22.jpg" width="1368" height="2048" loading="lazy" decoding="async"
+             alt="Young man in a light blue plaid shirt leaning back against a weathered split-rail fence with summer woods behind him">
+      </button>
+
       <button class="tile" type="button" data-cap="Studio portrait">
         <img src="assets/g10.jpg" width="1136" height="1700" loading="lazy" decoding="async"
              alt="Studio portrait of a woman in a red knit top leaning on a wooden stool against a black backdrop">
@@ -434,9 +510,19 @@ body.lb-open{overflow:hidden}
              alt="Woman in a pale yellow dress holding silver number twenty-eight balloons in front of a farm gate at golden hour">
       </button>
 
+      <button class="tile" type="button" data-cap="Couples &middot; black and white">
+        <img src="assets/g24.jpg" width="1368" height="2048" loading="lazy" decoding="async"
+             alt="Black and white photograph framed past a man in a wide-brim hat, his partner laughing in the sunlit field beyond">
+      </button>
+
       <button class="tile" type="button" data-cap="Senior portraits">
         <img src="assets/g16.jpg" width="1135" height="1700" loading="lazy" decoding="async"
              alt="Senior portrait of a young man playing an electric guitar against a painted mural, music notes drifting across the frame">
+      </button>
+
+      <button class="tile" type="button" data-cap="Couples session">
+        <img src="assets/g23.jpg" width="2048" height="1368" loading="lazy" decoding="async"
+             alt="Couple holding hands and laughing in a fenced pasture at dusk, her long sage gown trailing across the grass">
       </button>
 
       <button class="tile" type="button" data-cap="Fine art portrait">
@@ -479,6 +565,61 @@ body.lb-open{overflow:hidden}
              alt="Black and white commercial portrait of a man in an oversized white tee seated against a sunlit studio wall">
       </button>
     </div>
+  </section>
+
+  <section class="addons wrap" id="addons" aria-labelledby="addons-h">
+    <div class="work-head">
+      <p class="eyebrow">Session extras</p>
+      <div class="rule"></div>
+      <h2 id="addons-h">Add-ons</h2>
+    </div>
+
+    <article class="addon">
+      <div class="addon-media">
+        <figure class="reel">
+          <video controls playsinline preload="metadata"
+                 poster="assets/highlight-reel-poster.jpg" width="1280" height="720">
+            <source src="assets/highlight-reel.mp4" type="video/mp4">
+            Your browser cannot play this video.
+            <a href="assets/highlight-reel.mp4">Open the highlight reel</a> instead.
+          </video>
+          <figcaption>Sample highlight reel &middot; just under a minute, with sound</figcaption>
+        </figure>
+      </div>
+      <div class="addon-copy">
+        <h3>Highlight Reel Add-On <span class="price">Ask when booking</span></h3>
+        <div class="addon-body">
+          <p>Turn your favorite moments into a beautiful keepsake you can relive again and again.</p>
+          <p>Add a 30-second to 1-minute highlight reel to any photography session or event. Your
+             photographs will be thoughtfully paired with carefully selected video moments to create
+             a short, cinematic recap of your experience.</p>
+          <p>Perfect for capturing the little details, genuine smiles, laughter, and unforgettable
+             moments that deserve to be remembered beyond a photograph.</p>
+          <p>Available as an add-on to any photo session or event.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="addon addon-flip">
+      <div class="addon-media">
+        <figure class="keepsakes">
+          <img src="assets/polaroid-keepsakes.jpg" width="1400" height="1400" loading="lazy" decoding="async"
+               alt="A hand holding three mini instant prints fanned out above a wooden table">
+          <figcaption>Three mini instant prints to take home the same day</figcaption>
+        </figure>
+      </div>
+      <div class="addon-copy">
+        <h3>Mini Polaroid Keepsakes <span class="price">$25</span></h3>
+        <div class="addon-body">
+          <p>Take a few memories home with you the same day! Add three mini Polaroid-style prints to
+             any photography session or event. These instant keepsakes are perfect for displaying,
+             gifting, or simply tucking away as a little reminder of the day.</p>
+        </div>
+      </div>
+    </article>
+
+    <p class="addons-note">Both add-ons are available for any session or event.
+       <a href="#contact">Ask about them when you book</a>.</p>
   </section>
 
   <section class="meet wrap" id="about">
@@ -720,35 +861,5 @@ body.lb-open{overflow:hidden}
 }
 </script>
 
-<!-- awb-cta-tracking v3: paste before </body> at go-live; replace rendon (see awb-go-live Step 6) -->
-<script>
-(function(){
-  function cls(a){
-    var h=(a.getAttribute('href')||'').toLowerCase();
-    if(h.indexOf('tel:')===0)return'call';
-    if(h.indexOf('sms:')===0)return'text';
-    if(h.indexOf('mailto:')===0)return'email';
-    if(h.indexOf('/cdn-cgi/l/email-protection')===0)return'email';
-    if(/instagram\.com|facebook\.com/.test(h))return'social';
-    if(/calendly|booksy|squareup|acuityscheduling|setmore/.test(h))return'book';
-    return'';
-  }
-  function lbl(a){
-    var s=(a.dataset&&a.dataset.track)||'';
-    if(!s)s=(a.textContent||'').replace(/\s+/g,' ').trim()||a.getAttribute('aria-label')||'';
-    return s.toLowerCase().slice(0,40);
-  }
-  try{navigator.sendBeacon('/_t',JSON.stringify({k:'rendon',e:'view',p:location.pathname.slice(0,100)}));}catch(x){}
-  addEventListener('click',function(ev){
-    try{
-      var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
-      if(!a)return;
-      var e=cls(a),s=lbl(a);
-      if(!e&&!(a.dataset&&a.dataset.track))return;
-      navigator.sendBeacon('/_t',JSON.stringify({k:'rendon',e:e||'other',s:s,h:a.getAttribute('href').slice(0,200),p:location.pathname.slice(0,100)}));
-    }catch(x){}
-  },true);
-})();
-</script>
 </body>
 </html>
