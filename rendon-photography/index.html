@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://rendonphotography.com/assets/og-rendon-photography.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A couple resting together in a summer pasture at sunset, photographed by Rendon Photography">
+<meta property="og:image:alt" content="A couple holding hands and laughing beside a wooden fence in a pasture at dusk, photographed by Rendon Photography">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rendon Photography | Photographer in Newberry, SC">
 <meta name="twitter:description" content="Wedding, couples, family, newborn, maternity, senior and studio photography in Newberry, South Carolina.">
@@ -110,42 +110,35 @@ p{margin:0}
 }
 
 /* ---------- hero ---------- */
-/* The top frame is a 2:3 studio portrait on a white seamless. A full-bleed cover crop
-   would trim it to a letterbox band across the sitter's chest and put a dark veil over
-   the backdrop, so the hero is an editorial split instead: the portrait is shown WHOLE
-   (object-fit:contain, so the face is never cropped at any breakpoint) beside the
-   wordmark on the paper ground. No veil, no reversed-out type, nothing to overlap. */
-.hero{position:relative;border-bottom:1px solid var(--rule)}
-.hero-in{
-  display:grid;align-items:center;
-  gap:clamp(26px,4.6vw,44px);
-  padding-block:clamp(28px,4.6vw,52px) clamp(52px,6.4vw,78px);
+.hero{position:relative;background:#2b2724}
+.hero img{
+  width:100%;height:min(84svh,880px);object-fit:cover;object-position:center 80%;
 }
-@media (min-width:900px){
-  .hero-in{
-    grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
-    gap:clamp(44px,5.4vw,88px);
-    min-height:min(84svh,880px);
-  }
-  @supports not (height:1svh){.hero-in{min-height:min(84vh,880px)}}
+@supports not (height:1svh){.hero img{height:min(84vh,880px)}}
+@media (max-width:700px){
+  .hero img{height:min(76svh,700px);object-position:52% 85%}
+  @supports not (height:1svh){.hero img{height:min(76vh,700px)}}
 }
-.hero-fig{margin:0}
-.hero-fig img{
-  width:100%;height:auto;border-radius:2px;
-  max-height:min(74svh,780px);object-fit:contain;object-position:center;
+.hero-veil{
+  position:absolute;inset:auto 0 0 0;height:70%;pointer-events:none;
+  /* bright, high-key frame (pastel dusk sky, pale lace gown) — the veil has to carry
+     more weight than a dark image would need for the lock-up to stay legible */
+  background:linear-gradient(to top,rgba(24,20,16,.84) 0%,rgba(24,20,16,.7) 26%,rgba(24,20,16,.42) 56%,rgba(24,20,16,0) 100%);
 }
-@supports not (height:1svh){.hero-fig img{max-height:min(74vh,780px)}}
-/* stacked: let the portrait run its natural 2:3 rather than capping it against a
-   viewport height that the type column is also competing for — but hold it to a
-   sane column so a 2:3 frame doesn't become 1150px tall on a tablet */
-@media (max-width:899px){
-  .hero-fig img{max-height:none}
-  .hero-fig{max-width:min(100%,540px);margin-inline:auto}
+.hero-lock{
+  position:absolute;left:0;right:0;bottom:clamp(74px,8vw,112px);
+  color:var(--white);
 }
-.hero-type h1{font-size:clamp(38px,6.6vw,78px);font-weight:300;letter-spacing:.02em}
+.hero-lock h1{
+  font-size:clamp(38px,7.4vw,80px);font-weight:300;letter-spacing:.02em;
+  /* the wordmark can land on the pale gown at some viewport sizes — a tight shadow plus
+     a wide bloom keeps the serif readable without looking like a drop shadow */
+  text-shadow:0 1px 4px rgba(20,16,12,.5),0 2px 30px rgba(20,16,12,.5);
+}
 .hero-line{
-  margin-top:clamp(14px,2vw,20px);font-size:clamp(11px,1.5vw,13.5px);
-  letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  margin-top:14px;font-size:clamp(11px,1.5vw,13.5px);
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(251,249,245,.94);
+  text-shadow:0 1px 3px rgba(20,16,12,.55),0 1px 18px rgba(20,16,12,.4);
 }
 .scroll-cue{
   position:absolute;bottom:clamp(18px,2.4vw,28px);left:50%;transform:translateX(-50%);
@@ -153,13 +146,12 @@ p{margin:0}
 }
 .scroll-cue span{
   display:block;width:1px;height:clamp(22px,4vw,38px);
-  background:linear-gradient(to bottom,rgba(111,103,92,0),rgba(111,103,92,.62));
+  background:linear-gradient(to bottom,rgba(251,249,245,0),rgba(251,249,245,.75));
 }
-.scroll-cue .i{color:var(--muted);animation:nudge 2.6s ease-in-out infinite}
+.scroll-cue .i{color:rgba(251,249,245,.8);animation:nudge 2.6s ease-in-out infinite}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 @media (prefers-reduced-motion:reduce){.scroll-cue .i{animation:none}}
-/* the cue only means anything when the whole hero is one screen */
-@media (max-width:899px){.scroll-cue{display:none}}
+@media (max-width:540px){.scroll-cue{display:none}}
 
 /* ---------- intro ---------- */
 .intro{padding-block:var(--section)}
@@ -400,14 +392,12 @@ body.lb-open{overflow:hidden}
 <main id="top">
 
   <section class="hero" aria-label="Introduction">
-    <div class="wrap hero-in">
-      <figure class="hero-fig">
-        <img src="assets/hero-studio-portrait-cream-chair.jpg" width="1368" height="2048"
-             fetchpriority="high" decoding="async"
-             alt="Studio portrait of a woman in a black top and trousers seated on a cream chair against a soft white backdrop, photographed by Rendon Photography">
-      </figure>
-      <div class="hero-type">
-        <div class="rule"></div>
+    <img src="assets/hero-couple-fence-sunset.jpg" width="2048" height="1368"
+         fetchpriority="high" decoding="async"
+         alt="A couple holding hands and laughing beside a wooden fence in a pasture at dusk under a pastel sky, photographed by Rendon Photography">
+    <div class="hero-veil"></div>
+    <div class="hero-lock">
+      <div class="wrap">
         <h1>Rendon Photography</h1>
         <p class="hero-line">Photography in Newberry, South Carolina</p>
       </div>
@@ -520,9 +510,9 @@ body.lb-open{overflow:hidden}
              alt="Senior portrait of a young man playing an electric guitar against a painted mural, music notes drifting across the frame">
       </button>
 
-      <button class="tile" type="button" data-cap="Couples session">
-        <img src="assets/g23.jpg" width="2048" height="1368" loading="lazy" decoding="async"
-             alt="Couple holding hands and laughing in a fenced pasture at dusk, her long sage gown trailing across the grass">
+      <button class="tile" type="button" data-cap="Studio portrait">
+        <img src="assets/g23.jpg" width="1368" height="2048" loading="lazy" decoding="async"
+             alt="Studio portrait of a woman in a black top and trousers seated on a cream chair against a soft white backdrop">
       </button>
 
       <button class="tile" type="button" data-cap="Fine art portrait">
