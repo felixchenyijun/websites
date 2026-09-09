@@ -851,5 +851,35 @@ body.lb-open{overflow:hidden}
 }
 </script>
 
+<!-- awb-cta-tracking v3: paste before </body> at go-live; replace rendon (see awb-go-live Step 6) -->
+<script>
+(function(){
+  function cls(a){
+    var h=(a.getAttribute('href')||'').toLowerCase();
+    if(h.indexOf('tel:')===0)return'call';
+    if(h.indexOf('sms:')===0)return'text';
+    if(h.indexOf('mailto:')===0)return'email';
+    if(h.indexOf('/cdn-cgi/l/email-protection')===0)return'email';
+    if(/instagram\.com|facebook\.com/.test(h))return'social';
+    if(/calendly|booksy|squareup|acuityscheduling|setmore/.test(h))return'book';
+    return'';
+  }
+  function lbl(a){
+    var s=(a.dataset&&a.dataset.track)||'';
+    if(!s)s=(a.textContent||'').replace(/\s+/g,' ').trim()||a.getAttribute('aria-label')||'';
+    return s.toLowerCase().slice(0,40);
+  }
+  try{navigator.sendBeacon('/_t',JSON.stringify({k:'rendon',e:'view',p:location.pathname.slice(0,100)}));}catch(x){}
+  addEventListener('click',function(ev){
+    try{
+      var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+      if(!a)return;
+      var e=cls(a),s=lbl(a);
+      if(!e&&!(a.dataset&&a.dataset.track))return;
+      navigator.sendBeacon('/_t',JSON.stringify({k:'rendon',e:e||'other',s:s,h:a.getAttribute('href').slice(0,200),p:location.pathname.slice(0,100)}));
+    }catch(x){}
+  },true);
+})();
+</script>
 </body>
 </html>
