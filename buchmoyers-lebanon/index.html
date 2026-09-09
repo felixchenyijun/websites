@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buchmoyer's Lawn Care — Lawn Mowing in Lebanon, PA</title>
+<meta name="description" content="Weekly and bi-weekly lawn mowing, trimming and leaf cleanup for homes in Lebanon, Myerstown, Cleona and Fredericksburg, PA. Call or text (717) 685-9327 for a fast estimate.">
+<link rel="canonical" href="https://falconwebstudio.com/websites/buchmoyers-lebanon/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Buchmoyer's Lawn Care — Lawn Mowing in Lebanon, PA">
+<meta property="og:description" content="Weekly and bi-weekly lawn mowing, trimming and leaf cleanup for homes in Lebanon, Myerstown, Cleona and Fredericksburg, PA. Call or text (717) 685-9327 for a fast estimate.">
+<meta property="og:url" content="https://falconwebstudio.com/websites/buchmoyers-lebanon/">
+<meta property="og:image" content="https://falconwebstudio.com/websites/buchmoyers-lebanon/assets/striped-front-lawn-lebanon.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0F172A', mute: '#475569', line: '#E2E8F0', mist: '#F7F8FA',
+        leaf: { DEFAULT: '#16A34A', deep: '#15803D', tint: '#EDF9F0', ring: '#BBF0CB' }
+      },
+      fontFamily: {
+        display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 24px 48px -20px rgba(15,23,42,0.18)',
+        card: '0 1px 2px rgba(15,23,42,0.04), 0 14px 34px -18px rgba(15,23,42,0.16)'
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { font-family: Inter, system-ui, sans-serif; color: #0F172A; background: #ffffff; -webkit-font-smoothing: antialiased; }
+  section[id] { scroll-margin-top: 84px; }
+  .hdr { background: rgba(255,255,255,0.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #E2E8F0; }
+  .eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #15803D; }
+  .eyebrow::before { content: ""; width: .5rem; height: .5rem; border-radius: 9999px; background: #16A34A; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; font-weight: 600; border-radius: 9999px; padding: .85rem 1.35rem; transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: #16A34A; color: #fff; box-shadow: 0 10px 24px -12px rgba(22,163,74,.7); }
+  .btn-primary:hover { background: #15803D; }
+  .btn-secondary { background: #fff; color: #0F172A; border: 1px solid #E2E8F0; }
+  .btn-secondary:hover { border-color: #BBF0CB; background: #EDF9F0; }
+  .btn-onleaf { background: #fff; color: #15803D; }
+  .btn-onleaf:hover { background: #EDF9F0; }
+  .btn-ghost-onleaf { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.35); }
+  .btn-ghost-onleaf:hover { background: rgba(255,255,255,.22); }
+  .navlink { position: relative; padding: .25rem 0; color: #475569; transition: color .15s; }
+  .navlink:hover { color: #0F172A; }
+  .navlink.active { color: #15803D; }
+  .navlink.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px; background: #16A34A; }
+  .chip { display: inline-flex; align-items: center; gap: .5rem; }
+  .chip svg { color: #16A34A; flex: none; }
+  .card { background: #fff; border: 1px solid #E2E8F0; border-radius: 1.5rem; transition: transform .2s ease, box-shadow .2s ease; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(15,23,42,.04), 0 14px 34px -18px rgba(15,23,42,.16); }
+  .icon-disc { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; background: #EDF9F0; color: #15803D; }
+  .stepnum { display: inline-flex; align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; border-radius: 9999px; background: #0F172A; color: #fff; font-family: Manrope, Inter, sans-serif; font-weight: 800; font-size: .9rem; }
+  /* signature: the schedule card */
+  .sched { display: grid; grid-template-columns: repeat(7, 1fr); gap: .3rem; }
+  .sched .d { font-size: .62rem; font-weight: 600; text-align: center; color: #94A3B8; letter-spacing: .04em; }
+  .sched .c { height: .55rem; border-radius: 9999px; background: #E2E8F0; }
+  .sched .c.on { background: #16A34A; box-shadow: 0 0 0 3px #EDF9F0; }
+  .sched .d.on { color: #15803D; }
+  /* reveal on scroll — visible by default; JS opts elements in, reduced-motion opts out */
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .card, .btn { transition: none; }
+  }
+  a:focus-visible, button:focus-visible { outline: 3px solid #BBF0CB; outline-offset: 3px; border-radius: 9999px; }
+  .stars { display: inline-flex; gap: 2px; color: #16A34A; }
+  figure img { display: block; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Buchmoyer's Lawn Care",
+  "description": "Weekly and bi-weekly lawn mowing, trimming and leaf cleanup for homes in Lebanon, Myerstown, Cleona and Fredericksburg, PA.",
+  "url": "https://falconwebstudio.com/websites/buchmoyers-lebanon/",
+  "image": "https://falconwebstudio.com/websites/buchmoyers-lebanon/assets/striped-front-lawn-lebanon.jpg",
+  "telephone": "+17176859327",
+  "email": "jb6262@yahoo.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1111 Florence St",
+    "addressLocality": "Lebanon",
+    "addressRegion": "PA",
+    "postalCode": "17042",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.3312027, "longitude": -76.428177 },
+  "areaServed": [
+    { "@type": "City", "name": "Lebanon, PA" },
+    { "@type": "City", "name": "Myerstown, PA" },
+    { "@type": "City", "name": "Cleona, PA" },
+    { "@type": "City", "name": "Fredericksburg, PA" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/buchmoyers/",
+    "https://www.google.com/maps/place/?q=place_id:ChIJAQC0kMYCxokRqauPpGIrNSg"
+  ]
+}
+</script>
+</head>
+<body class="font-body text-ink bg-white pb-20 md:pb-0">
+
+<!-- lucide icon sprite (inline SVG, no emoji anywhere) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-fence" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M6 8h4"/><path d="M6 18h4"/><path d="m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/><path d="M14 8h4"/><path d="M14 18h4"/><path d="m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+</svg>
+
+<!-- top bar -->
+<header id="top" class="hdr sticky top-0 z-50">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <a href="#top" class="font-display font-extrabold text-lg tracking-tight text-ink whitespace-nowrap">Buchmoyer's <span class="text-leaf-deep">Lawn Care</span></a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Sections">
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#how">How it works</a>
+      <a class="navlink" href="#work">Our work</a>
+      <a class="navlink" href="#reviews">Reviews</a>
+      <a class="navlink" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:+17176859327" class="hidden lg:inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-leaf-deep px-2">
+        <svg width="16" height="16"><use href="#i-phone"/></svg>(717) 685-9327
+      </a>
+      <a href="sms:+17176859327" class="btn btn-primary text-sm px-4 py-2.5 hidden sm:inline-flex whitespace-nowrap">Get an estimate</a>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-line text-ink" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg width="20" height="20"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileNav" hidden class="md:hidden border-t border-line bg-white">
+    <nav class="mx-auto max-w-6xl px-5 py-3 flex flex-col text-base font-medium" aria-label="Sections">
+      <a class="py-3 border-b border-line" href="#services">Services</a>
+      <a class="py-3 border-b border-line" href="#how">How it works</a>
+      <a class="py-3 border-b border-line" href="#work">Our work</a>
+      <a class="py-3 border-b border-line" href="#reviews">Reviews</a>
+      <a class="py-3 border-b border-line" href="#contact">Contact</a>
+      <a class="py-3 inline-flex items-center gap-2 text-leaf-deep font-semibold" href="tel:+17176859327"><svg width="18" height="18"><use href="#i-phone"/></svg>Call (717) 685-9327</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- hero -->
+<section class="relative overflow-hidden">
+  <div class="pointer-events-none absolute -top-40 right-0 w-[42rem] h-[42rem] rounded-full bg-leaf-tint opacity-70 blur-3xl" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-6xl px-5 sm:px-6 pt-12 pb-20 md:pt-20 md:pb-28 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center">
+    <div class="md:col-span-6">
+      <p class="eyebrow">Lawn mowing · Lebanon, PA</p>
+      <h1 class="mt-4 font-display font-extrabold tracking-tight text-ink text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.05]">Your lawn, cut on the same day every week.</h1>
+      <p class="mt-5 text-lg text-mute leading-relaxed max-w-xl">Weekly or bi-weekly mowing, trimming and leaf cleanup for homes in Lebanon, Myerstown, Cleona and Fredericksburg. Text us your name and address and we'll reply with a fast estimate.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+17176859327" class="btn btn-primary"><svg width="18" height="18"><use href="#i-phone"/></svg>Call (717) 685-9327</a>
+        <a href="sms:+17176859327" class="btn btn-secondary"><svg width="18" height="18"><use href="#i-message"/></svg>Text for an estimate</a>
+      </div>
+      <div class="mt-7 flex items-center gap-3 text-sm">
+        <span class="stars" aria-hidden="true">
+          <svg width="16" height="16"><use href="#i-star"/></svg><svg width="16" height="16"><use href="#i-star"/></svg><svg width="16" height="16"><use href="#i-star"/></svg><svg width="16" height="16"><use href="#i-star"/></svg><svg width="16" height="16"><use href="#i-star"/></svg>
+        </span>
+        <span class="font-semibold text-ink">5.0 on Google</span>
+        <span class="text-mute">· 11 reviews</span>
+      </div>
+    </div>
+
+    <div class="md:col-span-6 relative pb-14 sm:pb-12">
+      <figure class="rounded-3xl overflow-hidden shadow-soft ring-1 ring-line bg-mist">
+        <img src="assets/striped-front-lawn-lebanon.jpg" width="1200" height="900" alt="Freshly striped front lawn under a large tree in Lebanon, PA, with our truck and trailer parked on the street" class="w-full aspect-[4/3] object-cover" fetchpriority="high">
+      </figure>
+      <!-- signature: schedule card -->
+      <div class="absolute bottom-0 left-4 sm:left-6 w-[15.5rem] bg-white rounded-2xl shadow-card ring-1 ring-line p-4">
+        <div class="flex items-center gap-2">
+          <svg width="16" height="16" class="text-leaf-deep"><use href="#i-calendar"/></svg>
+          <span class="text-[11px] font-semibold uppercase tracking-[.12em] text-leaf-deep">Same day, every week</span>
+        </div>
+        <div class="sched mt-3" aria-hidden="true">
+          <span class="d">M</span><span class="d">T</span><span class="d on">W</span><span class="d">T</span><span class="d">F</span><span class="d">S</span><span class="d">S</span>
+          <span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span>
+          <span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span>
+          <span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span>
+          <span class="c"></span><span class="c"></span><span class="c on"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span>
+        </div>
+        <p class="mt-3 text-xs text-mute leading-snug">Weekly or bi-weekly. You pick the plan; the day stays the same.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- trust row -->
+<section class="border-y border-line bg-mist" aria-label="At a glance">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-5 flex flex-wrap justify-center md:justify-between gap-x-8 gap-y-3 text-sm font-medium text-ink">
+    <span class="chip"><svg width="16" height="16"><use href="#i-star"/></svg>5.0 on Google · 11 reviews</span>
+    <span class="chip"><svg width="16" height="16"><use href="#i-pin"/></svg>Lebanon · Myerstown · Cleona · Fredericksburg</span>
+    <span class="chip"><svg width="16" height="16"><use href="#i-fence"/></svg>We close gates</span>
+    <span class="chip"><svg width="16" height="16"><use href="#i-message"/></svg>We return calls &amp; texts</span>
+  </div>
+</section>
+
+<!-- how it works -->
+<section id="how" class="bg-white">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 md:py-24">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 class="mt-3 font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Getting on the route takes one text.</h2>
+      <p class="mt-4 text-mute text-lg leading-relaxed">No forms, no waiting for a callback that never comes. Here's the whole process.</p>
+    </div>
+    <ol class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <li class="card p-7 reveal">
+        <span class="stepnum">1</span>
+        <h3 class="mt-5 font-display font-bold text-xl">Text us your name and address</h3>
+        <p class="mt-2 text-mute leading-relaxed">That's all we need to get started. Send it to (717) 685-9327 — we answer texts and return calls.</p>
+      </li>
+      <li class="card p-7 reveal">
+        <span class="stepnum">2</span>
+        <h3 class="mt-5 font-display font-bold text-xl">Get a fast estimate</h3>
+        <p class="mt-2 text-mute leading-relaxed">We look at the property and reply with a price for weekly or bi-weekly mowing.</p>
+      </li>
+      <li class="card p-7 reveal">
+        <span class="stepnum">3</span>
+        <h3 class="mt-5 font-display font-bold text-xl">We show up on your day</h3>
+        <p class="mt-2 text-mute leading-relaxed">Same day every week, or every two weeks. We close the gates behind us and respect your property.</p>
+      </li>
+    </ol>
+    <figure class="mt-10 rounded-3xl overflow-hidden ring-1 ring-line bg-mist reveal">
+      <img src="assets/truck-trailer-rig.jpg" width="960" height="345" alt="Our blue pickup and trailer loaded with an orange riding mower and water barrels, parked beside a shed" class="w-full aspect-[16/6] sm:aspect-[960/345] object-cover" loading="lazy">
+      <figcaption class="px-5 py-3 text-sm text-mute flex items-center gap-2"><svg width="16" height="16" class="text-leaf-deep"><use href="#i-truck"/></svg>This is us: the truck, the trailer and the rider that run the route.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- services -->
+<section id="services" class="bg-leaf-tint">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 md:py-24">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">What we do</p>
+      <h2 class="mt-3 font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Mowing, trimming and leaf cleanup.</h2>
+      <p class="mt-4 text-mute text-lg leading-relaxed">Keeping your yard sharp and clean cut is the job. We do it on a fixed schedule so you never have to think about it.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article class="card p-7 reveal">
+        <span class="icon-disc"><svg width="22" height="22"><use href="#i-repeat"/></svg></span>
+        <h3 class="mt-5 font-display font-bold text-xl">Lawn mowing</h3>
+        <p class="mt-2 text-mute leading-relaxed">Weekly or bi-weekly, on the same day each time. Clean lines on every visit, so the yard looks sharp all season.</p>
+      </article>
+      <article class="card p-7 reveal">
+        <span class="icon-disc"><svg width="22" height="22"><use href="#i-scissors"/></svg></span>
+        <h3 class="mt-5 font-display font-bold text-xl">Trimming</h3>
+        <p class="mt-2 text-mute leading-relaxed">String trimming along edges, fence lines and beds so the whole yard looks finished, not just the open lawn.</p>
+      </article>
+      <article class="card p-7 reveal">
+        <span class="icon-disc"><svg width="22" height="22"><use href="#i-leaf"/></svg></span>
+        <h3 class="mt-5 font-display font-bold text-xl">Leaf cleanup</h3>
+        <p class="mt-2 text-mute leading-relaxed">When fall comes we keep taking care of the yard on your regular schedule, until the leaves are gone or it snows.</p>
+      </article>
+    </div>
+
+    <div class="mt-12 reveal">
+      <h3 class="font-display font-bold text-lg">Two ways to schedule</h3>
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="flex items-start gap-4 bg-white rounded-2xl ring-1 ring-line p-5">
+          <span class="icon-disc" style="width:2.5rem;height:2.5rem"><svg width="18" height="18"><use href="#i-calendar"/></svg></span>
+          <div>
+            <p class="font-semibold">Weekly</p>
+            <p class="mt-1 text-mute text-sm leading-relaxed">Once a week, on the same day every week.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl ring-1 ring-line p-5">
+          <span class="icon-disc" style="width:2.5rem;height:2.5rem"><svg width="18" height="18"><use href="#i-calendar"/></svg></span>
+          <div>
+            <p class="font-semibold">Bi-weekly</p>
+            <p class="mt-1 text-mute text-sm leading-relaxed">Every two weeks, on the same day every two weeks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- our work -->
+<section id="work" class="bg-white">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 md:py-24">
+    <div class="max-w-2xl reveal">
+      <p class="eyebrow">Our work</p>
+      <h2 class="mt-3 font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Some of our recent cuts.</h2>
+      <p class="mt-4 text-mute text-lg leading-relaxed">Straight lines and clean edges, on the schedule you picked.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <figure class="rounded-3xl overflow-hidden ring-1 ring-line bg-mist reveal">
+        <img src="assets/backyard-stripes-fence.jpg" width="900" height="1200" alt="Freshly striped backyard lawn with young trees and a wooden privacy fence" class="w-full aspect-[4/5] object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm text-mute">Backyard stripes along the fence line</figcaption>
+      </figure>
+      <figure class="rounded-3xl overflow-hidden ring-1 ring-line bg-mist reveal">
+        <img src="assets/front-lawn-mulch-bed.jpg" width="900" height="1195" alt="Striped front lawn beside a mulched bed and shrubs, looking out toward the road" class="w-full aspect-[4/5] object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm text-mute">Front lawn and bed after the cut</figcaption>
+      </figure>
+      <figure class="sm:col-span-2 rounded-3xl overflow-hidden ring-1 ring-line bg-mist reveal">
+        <img src="assets/crew-fresh-cut-lawn.jpg" width="960" height="345" alt="A crew member with a backpack blower walking the street beside a freshly cut lawn" class="w-full aspect-[16/7] sm:aspect-[960/345] object-cover" loading="lazy">
+        <figcaption class="px-5 py-3 text-sm text-mute">Blowing off the street before we leave</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section id="reviews" class="bg-mist border-y border-line">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
+    <div class="md:col-span-5 reveal">
+      <p class="eyebrow">Reviews</p>
+      <h2 class="mt-3 font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Rated 5.0 by our customers on Google.</h2>
+      <div class="mt-6 flex items-end gap-4">
+        <span class="font-display font-extrabold text-6xl leading-none text-ink">5.0</span>
+        <div class="pb-1">
+          <span class="stars" aria-label="5 out of 5 stars">
+            <svg width="18" height="18"><use href="#i-star"/></svg><svg width="18" height="18"><use href="#i-star"/></svg><svg width="18" height="18"><use href="#i-star"/></svg><svg width="18" height="18"><use href="#i-star"/></svg><svg width="18" height="18"><use href="#i-star"/></svg>
+          </span>
+          <p class="text-sm text-mute mt-1">11 reviews on Google</p>
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/place/?q=place_id:ChIJAQC0kMYCxokRqauPpGIrNSg" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 font-semibold text-leaf-deep hover:text-ink">Read all 11 reviews on Google<svg width="16" height="16"><use href="#i-ext"/></svg></a>
+    </div>
+    <figure class="md:col-span-7 card p-7 sm:p-9 reveal">
+      <svg width="28" height="28" class="text-leaf"><use href="#i-quote"/></svg>
+      <blockquote class="mt-4 font-display font-semibold text-xl sm:text-2xl leading-snug text-ink">"I was down for surgery and so was the Mrs. These guys came the same day and, took care of my entire property in under 30 minutes. Great service and pricing. Highly recommend."</blockquote>
+      <figcaption class="mt-5 text-sm text-mute"><span class="font-semibold text-ink">Eric Wilson</span> · Google review</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- contact -->
+<section id="contact" class="bg-white">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-20 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+    <div class="reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 class="mt-3 font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Call, text or email. We get back to you.</h2>
+      <ul class="mt-8 space-y-5">
+        <li class="flex items-start gap-4">
+          <span class="icon-disc"><svg width="20" height="20"><use href="#i-phone"/></svg></span>
+          <div>
+            <p class="text-sm text-mute">Call or text</p>
+            <a href="tel:+17176859327" class="font-display font-bold text-lg text-ink hover:text-leaf-deep">(717) 685-9327</a>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="icon-disc"><svg width="20" height="20"><use href="#i-mail"/></svg></span>
+          <div>
+            <p class="text-sm text-mute">Email</p>
+            <a href="mailto:jb6262@yahoo.com" class="font-display font-bold text-lg text-ink hover:text-leaf-deep break-all">jb6262@yahoo.com</a>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="icon-disc"><svg width="20" height="20"><use href="#i-pin"/></svg></span>
+          <div>
+            <p class="text-sm text-mute">Based at</p>
+            <p class="font-display font-bold text-lg text-ink">1111 Florence St, Lebanon, PA 17042</p>
+            <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1111+Florence+St%2C+Lebanon%2C+PA+17042" target="_blank" rel="noopener" class="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-leaf-deep hover:text-ink"><svg width="14" height="14"><use href="#i-nav"/></svg>Get directions</a>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="icon-disc"><svg width="20" height="20"><use href="#i-clock"/></svg></span>
+          <div>
+            <p class="text-sm text-mute">Hours</p>
+            <p class="font-display font-bold text-lg text-ink">Call or text for hours</p>
+          </div>
+        </li>
+      </ul>
+      <div class="mt-8 pt-8 border-t border-line">
+        <p class="text-sm font-semibold uppercase tracking-[.12em] text-mute">Where we mow</p>
+        <ul class="mt-3 flex flex-wrap gap-2">
+          <li class="px-3 py-1.5 rounded-full bg-leaf-tint text-leaf-deep text-sm font-semibold">Lebanon</li>
+          <li class="px-3 py-1.5 rounded-full bg-leaf-tint text-leaf-deep text-sm font-semibold">Myerstown</li>
+          <li class="px-3 py-1.5 rounded-full bg-leaf-tint text-leaf-deep text-sm font-semibold">Cleona</li>
+          <li class="px-3 py-1.5 rounded-full bg-leaf-tint text-leaf-deep text-sm font-semibold">Fredericksburg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="rounded-3xl overflow-hidden ring-1 ring-line shadow-card bg-mist h-[22rem] md:h-full md:min-h-[26rem]">
+        <iframe title="Map showing Buchmoyer's Lawn Care at 1111 Florence St, Lebanon, PA" src="https://www.openstreetmap.org/export/embed.html?bbox=-76.434177%2C40.3252027%2C-76.422177%2C40.3372027&amp;layer=mapnik&amp;marker=40.3312027%2C-76.428177" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- closing CTA -->
+<section class="bg-leaf-deep text-white">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <div class="max-w-xl">
+      <h2 class="font-display font-extrabold tracking-tight text-3xl sm:text-4xl">Ready for a lawn on a schedule?</h2>
+      <p class="mt-3 text-lg leading-relaxed" style="color:rgba(255,255,255,.85)">Text your name and address to (717) 685-9327 and we'll reply with a fast estimate for weekly or bi-weekly mowing.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-3 md:flex-none">
+      <a href="sms:+17176859327" class="btn btn-onleaf"><svg width="18" height="18"><use href="#i-message"/></svg>Text for an estimate</a>
+      <a href="tel:+17176859327" class="btn btn-ghost-onleaf"><svg width="18" height="18"><use href="#i-phone"/></svg>Call (717) 685-9327</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-mist border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <p class="font-display font-extrabold text-lg text-ink">Buchmoyer's <span class="text-leaf-deep">Lawn Care</span></p>
+      <p class="mt-2 text-mute leading-relaxed">Lawn mowing, trimming and leaf cleanup for homes in Lebanon, Myerstown, Cleona and Fredericksburg, PA.</p>
+      <a href="https://www.facebook.com/buchmoyers/" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 font-semibold text-ink hover:text-leaf-deep"><svg width="16" height="16"><use href="#i-facebook"/></svg>Find us on Facebook</a>
+    </div>
+    <div>
+      <p class="font-semibold text-ink">Contact</p>
+      <ul class="mt-2 space-y-1.5 text-mute">
+        <li><a href="tel:+17176859327" class="hover:text-leaf-deep">(717) 685-9327</a> · call or text</li>
+        <li><a href="mailto:jb6262@yahoo.com" class="hover:text-leaf-deep">jb6262@yahoo.com</a></li>
+        <li>1111 Florence St, Lebanon, PA 17042</li>
+        <li>Call or text for hours</li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-ink">On this page</p>
+      <ul class="mt-2 space-y-1.5 text-mute">
+        <li><a href="#services" class="hover:text-leaf-deep">Services</a></li>
+        <li><a href="#how" class="hover:text-leaf-deep">How it works</a></li>
+        <li><a href="#work" class="hover:text-leaf-deep">Our work</a></li>
+        <li><a href="#reviews" class="hover:text-leaf-deep">Reviews</a></li>
+        <li><a href="#contact" class="hover:text-leaf-deep">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-line">
+    <p class="mx-auto max-w-6xl px-5 sm:px-6 py-5 text-xs text-mute">&copy; 2026 Buchmoyer's Lawn Care · Lebanon, PA</p>
+  </div>
+</footer>
+
+<!-- mobile sticky call bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-line px-4 py-3 grid grid-cols-2 gap-3" style="padding-bottom: calc(.75rem + env(safe-area-inset-bottom))">
+  <a href="tel:+17176859327" class="btn btn-primary text-sm py-3"><svg width="16" height="16"><use href="#i-phone"/></svg>Call</a>
+  <a href="sms:+17176859327" class="btn btn-secondary text-sm py-3"><svg width="16" height="16"><use href="#i-message"/></svg>Text</a>
+</div>
+
+<script>
+(function () {
+  try {
+    document.documentElement.classList.add('js');
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileNav = document.getElementById('mobileNav');
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', function () {
+        var open = !mobileNav.hidden;
+        mobileNav.hidden = open;
+        menuBtn.setAttribute('aria-expanded', String(!open));
+        menuBtn.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+        menuBtn.innerHTML = open
+          ? '<svg width="20" height="20"><use href="#i-menu"/></svg>'
+          : '<svg width="20" height="20"><use href="#i-x"/></svg>';
+      });
+      mobileNav.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { menuBtn.click(); });
+      });
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var ro = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+      reveals.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight) { el.classList.add('in'); } else { ro.observe(el); }
+      });
+    }
+    var links = document.querySelectorAll('.navlink');
+    var sections = [];
+    links.forEach(function (l) { var s = document.querySelector(l.getAttribute('href')); if (s) sections.push({ l: l, s: s }); });
+    if (sections.length && 'IntersectionObserver' in window) {
+      var so = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            links.forEach(function (l) { l.classList.remove('active'); });
+            sections.forEach(function (p) { if (p.s === e.target) p.l.classList.add('active'); });
+          }
+        });
+      }, { rootMargin: (-Math.round(window.innerHeight * 0.4)) + 'px 0px ' + (-Math.round(window.innerHeight * 0.55)) + 'px 0px', threshold: 0 });
+      sections.forEach(function (p) { so.observe(p.s); });
+    }
+  } catch (err) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
