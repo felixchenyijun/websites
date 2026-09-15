@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://falconwebstudio.com/websites/miguel-andres-lawn-service-fort-myers/sitemap.xml
