@@ -392,9 +392,17 @@ body.lb-open{overflow:hidden}
 <main id="top">
 
   <section class="hero" aria-label="Introduction">
-    <img src="assets/hero-couple-fence-sunset.jpg" width="2048" height="1368"
-         fetchpriority="high" decoding="async"
-         alt="A couple holding hands and laughing beside a wooden fence in a pasture at dusk under a pastel sky, photographed by Rendon Photography">
+    <!-- hero is full-bleed, so a 1440px-wide retina screen asks for ~2880 device px:
+         the 2048 frame was being upscaled by the browser and read soft. 2x variant added. -->
+    <picture>
+      <source type="image/webp" sizes="100vw"
+              srcset="assets/hero-couple-fence-sunset.webp 2048w, assets/hero-couple-fence-sunset-3072.webp 3072w">
+      <source type="image/jpeg" sizes="100vw"
+              srcset="assets/hero-couple-fence-sunset.jpg 2048w, assets/hero-couple-fence-sunset-3072.jpg 3072w">
+      <img src="assets/hero-couple-fence-sunset.jpg" width="2048" height="1368"
+           fetchpriority="high" decoding="async"
+           alt="A couple holding hands and laughing beside a wooden fence in a pasture at dusk under a pastel sky, photographed by Rendon Photography">
+    </picture>
     <div class="hero-veil"></div>
     <div class="hero-lock">
       <div class="wrap">
