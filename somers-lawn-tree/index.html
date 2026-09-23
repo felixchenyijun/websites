@@ -187,6 +187,12 @@ img{display:block;max-width:100%;height:auto}
 .rating-inline b{font-family:var(--display);font-size:1.15rem;font-weight:700}
 .rating-inline span{color:var(--ink-2);font-size:.92rem}
 .trust-pill{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--ink-2)}
+a.trust-pill,a.rating-inline{text-decoration:none;color:inherit;border-radius:6px;transition:color .15s ease}
+a.trust-pill:hover,a.rating-inline:hover{color:var(--brand)}
+a.trust-pill:hover svg{color:var(--brand)}
+a.trust-pill:focus-visible,a.rating-inline:focus-visible,.strip-cell a:focus-visible{outline:2px solid var(--brand-l);outline-offset:3px}
+.strip-cell a{color:inherit;text-decoration:none;display:block}
+.strip-cell a:hover .n{text-decoration:underline;text-underline-offset:3px}
 .trust-pill svg{width:18px;height:18px;color:var(--brand-l)}
 
 .hero-media{position:relative}
@@ -438,7 +444,7 @@ img{display:block;max-width:100%;height:auto}
           <a href="#contact" class="btn btn-ghost">Get a Free Estimate</a>
         </div>
         <div class="hero-trust">
-          <div class="rating-inline">
+          <a class="rating-inline" href="https://search.google.com/local/reviews?placeid=ChIJERB6J7pIR4gRScYINHwAvu0" target="_blank" rel="noopener" aria-label="Read our 49 reviews on Google (opens in a new tab)">
             <span class="stars" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -447,7 +453,7 @@ img{display:block;max-width:100%;height:auto}
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </span>
             <b>4.7</b><span>&middot; 49 reviews on Google</span>
-          </div>
+          </a>
           <span class="trust-pill">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Open 7 days a week
@@ -456,10 +462,10 @@ img{display:block;max-width:100%;height:auto}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Locally owned, Washington C.H.
           </span>
-          <span class="trust-pill">
+          <a class="trust-pill" href="https://www.bbb.org/us/oh/washington-court-house/profile/landscape-maintenance/somers-lawn-tree-0302-70141226" target="_blank" rel="noopener" aria-label="View our BBB Accredited Business profile, A+ rated (opens in a new tab)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
-            A+ rating with the BBB
-          </span>
+            BBB Accredited &middot; A+ rated
+          </a>
         </div>
       </div>
       <div class="hero-media">
@@ -483,9 +489,9 @@ img{display:block;max-width:100%;height:auto}
   <section class="strip">
     <div class="wrap" style="padding-block:var(--s5)">
       <div class="strip-grid reveal">
-        <div class="strip-cell"><div class="n">4.7<span class="star">&#9733;</span></div><div class="l">Google rating</div></div>
-        <div class="strip-cell"><div class="n">49</div><div class="l">Customer reviews</div></div>
-        <div class="strip-cell"><div class="n">A+</div><div class="l">BBB of Central Ohio</div></div>
+        <div class="strip-cell"><a href="https://search.google.com/local/reviews?placeid=ChIJERB6J7pIR4gRScYINHwAvu0" target="_blank" rel="noopener"><div class="n">4.7<span class="star">&#9733;</span></div><div class="l">Google rating</div></a></div>
+        <div class="strip-cell"><a href="https://search.google.com/local/reviews?placeid=ChIJERB6J7pIR4gRScYINHwAvu0" target="_blank" rel="noopener"><div class="n">49</div><div class="l">Customer reviews</div></a></div>
+        <div class="strip-cell"><a href="https://www.bbb.org/us/oh/washington-court-house/profile/landscape-maintenance/somers-lawn-tree-0302-70141226" target="_blank" rel="noopener"><div class="n">A+</div><div class="l">BBB Accredited</div></a></div>
         <div class="strip-cell"><div class="n">7&#8202;days</div><div class="l">Reachable 6am&ndash;10pm</div></div>
       </div>
     </div>
