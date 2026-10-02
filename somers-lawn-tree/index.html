@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lawn Care &amp; Tree Service in Washington Court House, OH | Somers</title>
 <meta name="description" content="Mowing, tree &amp; limb removal, bed renovation and firewood for Washington Court House, OH &amp; Fayette County. 4.7 stars, 47 reviews. Call Tom: (740) 463-8025." />
-<link rel="canonical" href="https://savcab.github.io/websites/somers-lawn-tree/" />
+<link rel="canonical" href="https://somerslawnandtrees.com/" />
 <meta name="theme-color" content="#1f3d2b" />
 
 <!-- Open Graph / Twitter -->
 <meta property="og:title" content="Somers Lawn & Tree — Lawn Care & Tree Service in Washington Court House, OH" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://savcab.github.io/websites/somers-lawn-tree/" />
-<meta property="og:image" content="https://savcab.github.io/websites/somers-lawn-tree/assets/somers-lawn-tree-care-washington-court-house.jpg" />
+<meta property="og:url" content="https://somerslawnandtrees.com/" />
+<meta property="og:image" content="https://somerslawnandtrees.com/assets/somers-lawn-tree-care-washington-court-house.jpg" />
 <meta property="og:description" content="One local crew for the whole yard — mowing, tree removal, limb work, and firewood in Washington Court House, OH. 4.7 stars on 47 reviews." />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -27,8 +27,8 @@
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "name": "Somers Lawn & Tree",
-  "image": "https://savcab.github.io/websites/somers-lawn-tree/assets/somers-lawn-tree-care-washington-court-house.jpg",
-  "url": "https://savcab.github.io/websites/somers-lawn-tree/",
+  "image": "https://somerslawnandtrees.com/assets/somers-lawn-tree-care-washington-court-house.jpg",
+  "url": "https://somerslawnandtrees.com/",
   "telephone": "+17404638025",
   "address": {
     "@type": "PostalAddress",
@@ -897,5 +897,36 @@ a.trust-pill:focus-visible,a.rating-inline:focus-visible,.strip-cell a:focus-vis
   }
 })();
 </script>
+<!-- awb-cta-tracking v3: paste before </body> at go-live; replace oh-washington-court-house-landscaping-somers-lawn-tree (see awb-go-live Step 6) -->
+<script>
+(function(){
+  function cls(a){
+    var h=(a.getAttribute('href')||'').toLowerCase();
+    if(h.indexOf('tel:')===0)return'call';
+    if(h.indexOf('sms:')===0)return'text';
+    if(h.indexOf('mailto:')===0)return'email';
+    if(h.indexOf('/cdn-cgi/l/email-protection')===0)return'email';
+    if(/instagram\.com|facebook\.com/.test(h))return'social';
+    if(/calendly|booksy|squareup|acuityscheduling|setmore/.test(h))return'book';
+    return'';
+  }
+  function lbl(a){
+    var s=(a.dataset&&a.dataset.track)||'';
+    if(!s)s=(a.textContent||'').replace(/\s+/g,' ').trim()||a.getAttribute('aria-label')||'';
+    return s.toLowerCase().slice(0,40);
+  }
+  try{navigator.sendBeacon('/_t',JSON.stringify({k:'somers',e:'view',p:location.pathname.slice(0,100)}));}catch(x){}
+  addEventListener('click',function(ev){
+    try{
+      var a=ev.target&&ev.target.closest?ev.target.closest('a[href]'):null;
+      if(!a)return;
+      var e=cls(a),s=lbl(a);
+      if(!e&&!(a.dataset&&a.dataset.track))return;
+      navigator.sendBeacon('/_t',JSON.stringify({k:'somers',e:e||'other',s:s,h:a.getAttribute('href').slice(0,200),p:location.pathname.slice(0,100)}));
+    }catch(x){}
+  },true);
+})();
+</script>
+
 </body>
 </html>
